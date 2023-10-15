@@ -118,7 +118,7 @@ function modifyText(inputText) {
 
   words.forEach(word => {
     if (arabicWords.includes(word)) {
-      modifiedText.push(modifyWord2(word));
+      modifiedText.push(modifyWord(word));
     } else {
       modifiedText.push(word);
     }
@@ -130,24 +130,37 @@ function modifyText(inputText) {
 const form = document.getElementById('text-form');
 const inputText = document.getElementById('input-text');
 const outputText = document.getElementById('output-text');
+const copyButton = document.getElementById('copy-button');
+
+let selectedModificationFunction = modifyText; // Default to modifyText
+
+// Listen for changes in the radio buttons
+const radioButtons = document.querySelectorAll('input[name="modification"]');
+radioButtons.forEach((radioButton) => {
+  radioButton.addEventListener('change', (e) => {
+    if (e.target.value === 'modifyText') {
+      selectedModificationFunction = modifyText;
+    } else if (e.target.value === 'modifyWord2') {
+      selectedModificationFunction = modifyWord2;
+    }
+  });
+});
 
 form.addEventListener('keyup', (e) => {
   e.preventDefault();
 
   const text = inputText.value;
-  const modified = modifyText(text);
+  const modified = selectedModificationFunction(text); // Use the selected function
 
   outputText.textContent = modified;
 });
-
-const copyButton = document.getElementById('copy-button');
 
 copyButton.addEventListener('click', () => {
   let text = outputText.textContent;
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(text).then(() => {
-      alert('تم نسخ النص بنجاح, النصر و العزة لفلسطين!');
+      alert('تم نسخ النص بنجاح, تحيا فلسطين حرة!');
     }).catch(() => {
       alert('Cannot copy text to clipboard. Please copy the text manually.');
     });
