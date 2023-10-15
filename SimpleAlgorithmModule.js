@@ -86,7 +86,7 @@ function modifyWord(word, position) {
 
 
 function modifyText(inputText,position) {
-  let words = inputText.split(' ');
+  let words = inputText.trim().split(' ');
   let modifiedText = [];
 
   words.forEach(word => {

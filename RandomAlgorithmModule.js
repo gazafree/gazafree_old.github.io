@@ -1,7 +1,7 @@
 import { arabicWords } from './ArabicWordsModule.js';
 
 function getRandomCharacterSet() {
-  const characterSets = ["+++++++++++++", "ــــــــــــــ", "٠٠٠٠٠٠٠٠٠٠٠٠٠٠", "ّّّّّّّّّّّّّّّّّّّّّّّّّّّّّّّ" , "ءءءءءءءءءءءءء"];
+  const characterSets = ["+++++++++++++", "+_+_+_+_+_+_+", "+٠+٠+٠+٠+٠+٠++" , "+ء+ء+ء+ء+ء+ء"];
   const randomIndex = Math.floor(Math.random() * characterSets.length);
   return characterSets[randomIndex];
 }
@@ -33,7 +33,7 @@ function modifyWord2(word) {
 
   for (let i = 1; i < word.length - 1; i++) {
     const originalChar = word.charAt(i);
-    const randomLength = (Math.floor(Math.random() * 5) + 1)%3; // Generate a random length (1 to 5 characters)
+    const randomLength = (Math.floor(Math.random() * 5) + 1)%4; // Generate a random length (1 to 5 characters)
     const randomString = "ــ"+generateRandomString(randomLength, charset)+"ـ";
     middleChars += originalChar + randomString;
   }
@@ -45,7 +45,7 @@ function modifyWord2(word) {
 }
 
 function modifyText2(inputText) {
-  let words = inputText.split(' ');
+  let words = inputText.trim().split(' ');
   let modifiedText = [];
 
   words.forEach(word => {
