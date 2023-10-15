@@ -62,18 +62,18 @@ function modifyWord(word, position) {
   switch(position) {
     case 'start':
       if (arabicReplacements[modifiedWord[0]]) {
-        modifiedWord[0] = arabicReplacements[modifiedWord[0]].split(',')[1];
+        modifiedWord[0] = arabicReplacements[modifiedWord[0]];
       }
       break;
     case 'middle':
       let middleIndex = Math.floor(word.length / 2);
       if (arabicReplacements[modifiedWord[middleIndex]]) {
-        modifiedWord[middleIndex] = arabicReplacements[modifiedWord[middleIndex]].split(',')[1];
+        modifiedWord[middleIndex] = arabicReplacements[modifiedWord[middleIndex]];
       }
       break;
     case 'end':
       if (arabicReplacements[modifiedWord[modifiedWord.length - 1]]) {
-        modifiedWord[modifiedWord.length - 1] = arabicReplacements[modifiedWord[modifiedWord.length - 1]].split(',')[1];
+        modifiedWord[modifiedWord.length - 1] = arabicReplacements[modifiedWord[modifiedWord.length - 1]];
       }
       break;
     default:

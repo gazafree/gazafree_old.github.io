@@ -13,7 +13,7 @@ const inputText = document.getElementById('input-text');
 const outputText = document.getElementById('output-text');
 const copyButton = document.getElementById('copy-button');
 
-let selectedModificationFunction = modifyText2; 
+let selectedModificationFunction = modifyTextStart;
 
 const radioButtons = document.querySelectorAll('input[name="modification"]');
 radioButtons.forEach((radioButton) => {
