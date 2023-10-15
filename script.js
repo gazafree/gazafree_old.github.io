@@ -182,10 +182,10 @@ copyButton.addEventListener('click', () => {
   let text = outputText.textContent;
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(text).then(() => {
-      alert('تم نسخ النص بنجاح, تحيا فلسطين حرة!');
+      alert('تم نسخ النص بنجاح!');
+
     }).catch(() => {
-      alert('Cannot copy text to clipboard. Please copy the text manually.');
+      alert('برجاء نسخ النص يدوياً');
     });
   }
 });

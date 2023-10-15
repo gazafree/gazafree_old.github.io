@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فلسطين حرة❤️</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <!-- Include your local style.css here -->
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️❤️عاشت فلسطين حرة عربية❤️❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body dir="rtl"> <!-- Use "dir" attribute for right-to-left text direction -->
 
-  <div class="container">
-    <h1>
-      <img src="https://cdn4.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_Palestine_-_Circle-512.png"  width="20" height="20" alt=""> فلسطين حرة😉❤️
-    </h1>
+<body dir="rtl">
+    <div class="container mt-4">
+        <h1 class="mb-4">
+            <img src="https://cdn4.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_Palestine_-_Circle-512.png" width="20" height="20" alt=""> ❤️❤️عاشت فلسطين حرة عربية❤️❤️
+        </h1>
 
-    <form id="text-form">
-      <div class="input-group">
-        <label for="input-text">ضع النص العربي:</label>
-        <textarea class="form-control" id="input-text" name="input-text" rows="4"></textarea>
-      </div>
+        <div class="card">
+            <div class="card-body">
+                <form id="text-form">
+                    <div class="mb-3">
+                        <label for="input-text" class="form-label">ضع النص العربي:</label>
+                        <textarea class="form-control" id="input-text" name="input-text" rows="4"></textarea>
+                    </div>
 
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="modification" value="modifyText" id="modify-text">
-        <label class="form-check-label" for="modify-text">تشفير بسيط</label>
-      </div>
-      <div class="form-check form-check-inline">
-        <input class="form-check-input" type="radio" name="modification" value="modifyText2" id="modify-text2" checked>
-        <label class="form-check-label" for="modify-text2">تشفير معقد</label>
-      </div>
-      <hr>
-      <!-- Re-enable the submit button if needed -->
-      <!-- <button type="submit">عدل النص</button> -->
-    </form>
-    <hr>
-    <label>النص المعدل:</label>
-    <div class="output-text" style="min-height: 125px;"> <!-- Remove unnecessary margin-top -->
-      <span id="output-text"></span>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="modification" value="modifyText" id="modify-text">
+                        <label class="form-check-label" for="modify-text">تشفير بسيط</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="modification" value="modifyText2" id="modify-text2" checked>
+                        <label class="form-check-label" for="modify-text2">تشفير معقد</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card mt-4">
+            <div class="card-body">
+                <label>النص المعدل:</label>
+                <div class="output-text mb-4" style="min-height: 125px;">
+                    <span id="output-text"></span>
+                </div>
+                <div class="text-center">
+                    <button id="copy-button" class="btn btn-primary">انسخ النص</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-success mt-4" role="alert">
+            <p class="mb-0">يتم إضافة كلمات جديدة إلى قاعدة البيانات لنحتوي على أكبر قدر من الكلمات.</p>
+            <hr>
+            <p class="mb-0">إذا كنت تريد المساعدة في إضافة كلمات جديدة، يرجى إرسالها إلى البريد الإلكتروني التالي:</p>
+            <p class="mb-0">
+                <a href="mailto:freegaza2023@gmail.com <span class="ai-compass"></span> freegaza2023@gmail.com <span class="ai-compass"></span>com</a>
+            </p>
+            <hr>
+            <p class="mb-0">إذا كنت تريد المساعدة في  التطوير برجاء المشاركة في تعديل الكود هنا :</p>
+            <p class="mb-0">
+              <a href="https://github.com/gazafree/gazafree.github.io" class="btn btn-info" target="_blank">Visit GitHub Repository</a>
+            </p>
+        </div>
     </div>
-    <div class="text-center">
-      <button id="copy-button">انسخ النص</button>
-    </div>
 
-    <div class="alert alert-success mt-3" role="alert">
-      <p>لأقصى استفادة، لا تضع نقاطًا أو فواصلًا أو علامات تنصيص بجانب النص مباشرة في منطقة الإدخال مثال "الأقصى" بدلًا من "الأقصى" وهكذا *</p>
-      <hr>
-      <p class="mb-0">يتم إضافة كلمات جديدة إلى قاعدة البيانات لنحتوي على أكبر قدر من الكلمات.</p>
-    </div>
-  </div>
-
-  <script src="./script.js"></script>
+    <script src="./script.js"></script>
 </body>
+
 </html>
