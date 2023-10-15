@@ -1,17 +1,15 @@
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,
-  initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>فلسطين حرة❤️</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Include your local style.css here -->
   <link rel="stylesheet" href="style.css">
 </head>
+<body dir="rtl"> <!-- Use "dir" attribute for right-to-left text direction -->
 
-<body style="direction: rtl;">
   <div class="container">
     <h1>
       <img src="https://cdn4.iconfinder.com/data/icons/world-flags-circular/1000/Flag_of_Palestine_-_Circle-512.png"  width="20" height="20" alt=""> فلسطين حرة😉❤️
@@ -20,29 +18,27 @@
     <form id="text-form">
       <div class="input-group">
         <label for="input-text">ضع النص العربي:</label>
-        <textarea class="form-control d-block w-100" id="input-text" name="input-text" rows="4"></textarea>
+        <textarea class="form-control" id="input-text" name="input-text" rows="4"></textarea>
       </div>
-
+      <!-- Re-enable the submit button if needed -->
       <!-- <button type="submit">عدل النص</button> -->
     </form>
     <hr>
     <label>النص المعدل:</label>
-    <div class="output-text" style="margin-top: -2px; min-height: 125px;">
+    <div class="output-text" style="min-height: 125px;"> <!-- Remove unnecessary margin-top -->
       <span id="output-text"></span>
-      <br>
     </div>
     <div class="text-center">
       <button id="copy-button">انسخ النص</button>
     </div>
 
     <div class="alert alert-success mt-3" role="alert">
-      <p> لأقصى استفادة لا تضع نقاط او فواصل او علامات تنصيص بجانب النص مباشرة في منطقة الادخال مثال " الأقصى " بدلًا من "الأقصى" وهكذا *</p>
+      <p>لأقصى استفادة، لا تضع نقاطًا أو فواصلًا أو علامات تنصيص بجانب النص مباشرة في منطقة الإدخال مثال "الأقصى" بدلًا من "الأقصى" وهكذا *</p>
       <hr>
-      <p class="mb-0">يتم اضافة كلمات جديدة الى ال في قواعد البيانات حتى نحتوي اكبر قدر من الكلمات</p>
+      <p class="mb-0">يتم إضافة كلمات جديدة إلى قاعدة البيانات لنحتوي على أكبر قدر من الكلمات.</p>
     </div>
   </div>
+
   <script src="./script.js"></script>
-
 </body>
-
 </html>
