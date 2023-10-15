@@ -8,7 +8,10 @@ const loadArabicWords = async () => {
     }
     
     const data = await response.json();
-    arabicWords = data.arabicWords; 
+    // Remove duplicates using Set and then convert it back to an array
+    arabicWords = [...new Set(data.arabicWords)];
+    // Print the total length
+    console.log(`Total unique Arabic words: ${arabicWords.length}`);
   } catch (error) {
     console.error('Error loading Arabic words:', error);
     arabicWords = []; 
