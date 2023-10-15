@@ -26,6 +26,7 @@ const loadArabicWords = async () => {
   }
 };
 
+/*************Simple algorithm*************/
 const arabicReplacements = {
   "س": "ـ,s,ـ",
   "ص": "ـ,s,ـ",
@@ -49,6 +50,39 @@ const arabicReplacements = {
   "ل": "ـ,l,ـ",
   "م": "ـ,m,ـ"
 };
+
+function modifyWord(word) {
+  let modifiedWord = word.split('');
+  let found = false;
+
+  for (let i = 0; i < word.length; i++) {
+    let char = word[i];
+    if (arabicReplacements[char] && !found) {
+      modifiedWord[i] = arabicReplacements[char];
+      found = true;
+    }
+  }
+
+  return modifiedWord.join('');
+}
+
+function modifyText(inputText) {
+  let words = inputText.split(' ');
+  let modifiedText = [];
+
+  words.forEach(word => {
+    if (arabicWords.includes(word)) {
+      modifiedText.push(modifyWord(word));
+    } else {
+      modifiedText.push(word);
+    }
+  });
+
+  return modifiedText.join(' ');
+}
+
+
+/*************Random algorithm*************/
 
 // The core of the script and data hiding algorithm
 function getRandomCharacterSet() {
@@ -95,30 +129,13 @@ function modifyWord2(word) {
   return encodedWord;
 }
 
-
-
-function modifyWord(word) {
-  let modifiedWord = word.split('');
-  let found = false;
-
-  for (let i = 0; i < word.length; i++) {
-    let char = word[i];
-    if (arabicReplacements[char] && !found) {
-      modifiedWord[i] = arabicReplacements[char];
-      found = true;
-    }
-  }
-
-  return modifiedWord.join('');
-}
-
-function modifyText(inputText) {
+function modifyText2(inputText) {
   let words = inputText.split(' ');
   let modifiedText = [];
 
   words.forEach(word => {
     if (arabicWords.includes(word)) {
-      modifiedText.push(modifyWord(word));
+      modifiedText.push(modifyWord2(word));
     } else {
       modifiedText.push(word);
     }
@@ -127,12 +144,13 @@ function modifyText(inputText) {
   return modifiedText.join(' ');
 }
 
+
 const form = document.getElementById('text-form');
 const inputText = document.getElementById('input-text');
 const outputText = document.getElementById('output-text');
 const copyButton = document.getElementById('copy-button');
 
-let selectedModificationFunction = modifyText; // Default to modifyText
+let selectedModificationFunction = modifyText2; // Default to modifyText
 
 // Listen for changes in the radio buttons
 const radioButtons = document.querySelectorAll('input[name="modification"]');
@@ -140,9 +158,14 @@ radioButtons.forEach((radioButton) => {
   radioButton.addEventListener('change', (e) => {
     if (e.target.value === 'modifyText') {
       selectedModificationFunction = modifyText;
-    } else if (e.target.value === 'modifyWord2') {
-      selectedModificationFunction = modifyWord2;
+    } else if (e.target.value === 'modifyText2') {
+      selectedModificationFunction = modifyText2;
     }
+
+    // When the radio button selection changes, update the modified text
+    const text = inputText.value;
+    const modified = selectedModificationFunction(text);
+    outputText.textContent = modified;
   });
 });
 
