@@ -183,7 +183,7 @@ copyButton.addEventListener('click', () => {
 
   if (navigator.clipboard && navigator.clipboard.writeText) {
       alert('تم نسخ النص بنجاح!');
-
+      navigator.clipboard.writeText(text).then(() => {
     }).catch(() => {
       alert('برجاء نسخ النص يدوياً');
     });
