@@ -1,4 +1,4 @@
-import { arabicWords } from '../ArabicWordsModule.js';
+import { arabicWords } from '../KeyWordsModule.js';
 
 const arabicReplacements={
   "ا":"ـ,a,ـ",

@@ -1,9 +1,9 @@
-import { loadArabicWords, arabicWords } from './ArabicWordsModule.js';
+import { loadAllWords, arabicWords } from './KeyWordsModule.js';
 import { modifyTextStart, modifyTextMid, modifyTextEnd } from './SimpleAlgorithmModule.js';
 import { modifyText2 } from './RandomAlgorithmModule.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadArabicWords().then(() => {
+  loadAllWords().then(() => {
     console.log('Loaded Arabic words:', arabicWords);
   });
 });

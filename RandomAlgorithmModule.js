@@ -1,4 +1,4 @@
-import { arabicWords } from './ArabicWordsModule.js';
+import { arabicWords } from './KeyWordsModule.js';
 
 function getRandomCharacterSet() {
   const characterSets = ["+++++++++++++", "+_+_+_+_+_+_+", "+٠+٠+٠+٠+٠+٠++" , "+ء+ء+ء+ء+ء+ء"];
