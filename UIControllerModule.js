@@ -1,6 +1,6 @@
 import { loadAllWords, arabicWords } from './KeyWordsModule.js';
 import { modifyTextStart, modifyTextMid, modifyTextEnd } from './SimpleAlgorithmModule.js';
-import { modifyText2 } from './RandomAlgorithmModule.js';
+import { modifyTextRandom } from './RandomAlgorithmModule.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   loadAllWords().then(() => {
@@ -24,8 +24,8 @@ radioButtons.forEach((radioButton) => {
       selectedModificationFunction = modifyTextMid;
     }else if (e.target.value === 'modifyTextEnd') {
       selectedModificationFunction = modifyTextEnd;
-    }else if (e.target.value === 'modifyText2') {
-      selectedModificationFunction = modifyText2;
+    }else if (e.target.value === 'modifyTextRandom') {
+      selectedModificationFunction = modifyTextRandom;
     }
     const text = inputText.value;
     const modified = selectedModificationFunction(text);

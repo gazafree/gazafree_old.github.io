@@ -44,7 +44,7 @@ function modifyWord2(word) {
   return encodedWord;
 }
 
-function modifyText2(inputText) {
+function modifyTextRandom(inputText) {
   let words = inputText.trim().split(' ');
   let modifiedText = [];
 
@@ -59,4 +59,4 @@ function modifyText2(inputText) {
   return modifiedText.join(' ');
 }
 
-export { modifyWord2, modifyText2 };
+export { modifyWord2, modifyTextRandom };
