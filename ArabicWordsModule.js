@@ -2,7 +2,7 @@ let arabicWords = [];
 
 const loadArabicWords = async () => {
   try {
-    const response = await fetch('words.json');
+    const response = await fetch('arabic_keywords.json');
     if (!response.ok) {
       throw new Error('Failed to load Arabic words.');
     }
